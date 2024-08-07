@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企業分析 - 就活支援アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>企業分析</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">ホーム</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form method="POST">
+            <label for="company_name">企業名：</label>
+            <input type="text" id="company_name" name="company_name" required>
+            <button type="submit">分析する</button>
+        </form>
+        {% if analysis %}
+            <h2>企業分析結果：</h2>
+            <p>{{ analysis }}</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+</body>
+</html>

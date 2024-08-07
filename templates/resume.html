@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>履歴書作成 - 就活支援アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>履歴書作成</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">ホーム</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form method="POST">
+            <label for="user_info">あなたの情報を入力してください：</label>
+            <textarea id="user_info" name="user_info" rows="10" cols="50" required></textarea>
+            <button type="submit">履歴書を生成</button>
+        </form>
+        {% if resume %}
+            <h2>生成された履歴書：</h2>
+            <pre>{{ resume }}</pre>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+</body>
+</html>

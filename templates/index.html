@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>就活支援アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>就活支援アプリ</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('generate_resume') }}">履歴書作成</a></li>
+            <li><a href="{{ url_for('interview_practice') }}">面接練習</a></li>
+            <li><a href="{{ url_for('analyze_company') }}">企業分析</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>ようこそ</h2>
+        <p>このアプリは、GPTを使用して就活をサポートします。上のメニューから機能を選択してください。</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+</body>
+</html>

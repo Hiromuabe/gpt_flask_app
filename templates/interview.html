@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面接練習 - 就活支援アプリ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>面接練習</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">ホーム</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form method="POST">
+            <label for="question">面接質問：</label>
+            <input type="text" id="question" name="question" required>
+            <label for="answer">あなたの回答：</label>
+            <textarea id="answer" name="answer" rows="5" cols="50" required></textarea>
+            <button type="submit">フィードバックを得る</button>
+        </form>
+        {% if feedback %}
+            <h2>フィードバック：</h2>
+            <p>{{ feedback }}</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 就活支援アプリ</p>
+    </footer>
+</body>
+</html>
